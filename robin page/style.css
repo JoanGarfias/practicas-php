@@ -1,0 +1,101 @@
+* {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+  
+body {
+    max-width: 900px;
+    margin: 30px auto;
+    background: #f4f4f4;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+}
+  
+html {
+    background: #fff;
+}
+  
+img {
+    border: none;
+    margin-right: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+  
+li a, .button {
+    text-decoration: none;
+    color: #333;
+}
+  
+li a:hover, .button:hover {
+    color: #1f5f67;
+}
+  
+.appname {
+    text-align: center;
+    background: #f1c40f;
+    color: #2c3e50;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 24px;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+  
+.fieldname {
+    float: left;
+    width: 120px;
+    font-weight: 600;
+}
+  
+.main {
+    margin-left: 40px;
+}
+  
+.info {
+    background: #e3f9e5;
+    color: #27ae60;
+    border: 1px solid #27ae60;
+    padding: 10px;
+    margin-left: 40px;
+    margin-bottom: 20px;
+}
+  
+.menu li, .button {
+    display: inline-block;
+    padding: 8px 12px;
+    border: none;
+    background: #ecf0f1;
+    color: #7f8c8d;
+    margin-right: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+  
+.menu li:hover, .button:hover {
+    background: #bdc3c7;
+}
+  
+.subhead {
+    font-weight: 600;
+    font-size: 18px;
+}
+  
+.taken, .error {
+    color: #e74c3c;
+}
+  
+.available {
+    color: #2ecc71;
+}
+  
+.whisper {
+    font-style: italic;
+    color: #16a085;
+}
+  
+#logo {
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+    font-size: 96px;
+    color: #34495e;
+} 

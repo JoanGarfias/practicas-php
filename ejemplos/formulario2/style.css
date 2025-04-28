@@ -1,0 +1,168 @@
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background: linear-gradient(to right, #e0f7fa, #80deea);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    max-width: 500px;
+    width: 100%;
+    background: #fff;
+    padding: 30px;
+    margin: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    transition: transform 0.3s ease;
+    animation: fadeIn 0.5s ease-in-out;
+    margin-top: 100px;
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+h2 {
+    font-family: 'Roboto', Arial;
+    color: #007BFF;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    display: inline-block;
+    font-weight: bold;
+    color: #555;
+    font-size: 18px;
+    padding-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #80deea;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 150, 136, 0.3);
+}
+
+textarea {
+    resize: vertical;
+    height: 120px;
+    font-family: Arial;
+}
+
+input[type="submit"] {
+    background: linear-gradient(90deg, #007BFF, #0056b3);
+    color: white;
+    font-weight: bold;
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.4s;
+    font-weight: bold;
+    margin-top: 10px;
+    font-family: Arial;
+}
+
+input[type="submit"]:hover {
+    background: linear-gradient(90deg, #0056b3, #0047a3);
+    transform: translateY(-3px);
+}
+
+input[type="submit"]:active {
+    transform: scale(0.95);
+}
+
+select {
+    background: #f1f1f1;
+    padding: 15px;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+p {
+    font-weight: bold;
+    font-size: 18px;
+    color: #444;
+}
+
+/* Animación de Fade In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Mensajes de error */
+.error-message {
+    color: #e74c3c;
+    font-size: 14px;
+    display: block;
+    margin-top: 5px;
+}
+
+/* Resaltar campos inválidos en rojo */
+input:invalid:focus,
+textarea:invalid:focus {
+    border-color: #e74c3c;
+    outline: 2px solid #e74c3c;
+}
+
+/* Resaltar campos válidos en verde */
+input:valid,
+textarea:valid {
+    border-color: #2ecc71;
+    outline: 2px solid #2ecc71;
+}
+
+/* Evitar que los campos vacíos aparezcan como inválidos */
+input:not(:focus):valid,
+textarea:not(:focus):valid {
+    border-color: #ccc;
+    outline: none;
+}
+
+/* Campo vacío no resaltado */
+input:not(:valid),
+textarea:not(:valid) {
+    border-color: #ccc;
+}
+
+/* Resaltar campos con validación requerida al no estar completos */
+input:required:invalid,
+textarea:required:invalid {
+    border-color: #e74c3c;
+    outline: 2px solid #e74c3c;
+}

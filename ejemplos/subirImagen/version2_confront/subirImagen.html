@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subir Imagen a ImgBB</title>
+</head>
+<body>
+
+    <h1>Subir Imagen</h1>
+    <form id="uploadForm" enctype="multipart/form-data">
+        <label for="image">Selecciona una imagen:</label>
+        <input type="file" name="image" id="image" required>
+        <button type="submit">Subir Imagen</button>
+    </form>
+
+    <h3>URL de la imagen sube</h3>
+    <div id="urlImagen"></div> <!-- Aquí se mostrará la URL de la imagen subida -->
+
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = new FormData();
+            formData.append('image', document.getElementById('image').files[0]);
+
+            fetch('subirImagen.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.url) {
+                    document.getElementById('urlImagen').innerHTML = `<a href="${data.url}" target="_blank">${data.url}</a>`;
+                    // Guardamos la URL en LocalStorage para usarla después
+                    localStorage.setItem('productoImagen', data.url);
+                } else {
+                    document.getElementById('urlImagen').innerHTML = "Error al subir la imagen.";
+                }
+            })
+            .catch(error => {
+                document.getElementById('urlImagen').innerHTML = "Error al subir la imagen.";
+            });
+        });
+    </script>
+
+</body>
+</html>
